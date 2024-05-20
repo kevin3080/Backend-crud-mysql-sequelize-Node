@@ -5,6 +5,7 @@ import db from './database/db.js';
 // importamos nuestro enrutador
 import blogRoutes from './routes/routes.js';
 import { PORT } from './config.js';
+import './models/BlogModel.js';
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use('/blogs', blogRoutes);
 
 try {
    await db.authenticate();
+   await db.sync({force: true});
    console.log('Conexion exitosa a la DB');
 } catch (error) {
    console.log(`El error de conexion es: ${error}`);

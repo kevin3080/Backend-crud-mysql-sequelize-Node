@@ -7,7 +7,7 @@
 import db from '../database/db.js';
 import { DataTypes } from 'sequelize';
 
-const BlogModel = db.define('blogs', {
+const BlogModel = db.define('blogsPractice', {
    // Define tu esquema de blogs:
    title: {
       type: DataTypes.STRING,
